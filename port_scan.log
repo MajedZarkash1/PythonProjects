@@ -1,2 +1,0 @@
-2025-03-30 11:26:27,989 - ERROR - Error scanning port 1 on 12345: [Errno 11001] getaddrinfo failed
-2025-03-30 11:26:28,822 - ERROR - Error scanning port 2 on 12345: [Errno 11001] getaddrinfo failed
