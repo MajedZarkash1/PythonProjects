@@ -19,6 +19,26 @@ title = Label(window,
                padx=50, #gap X
                pady=10,) #gap Y
 
+#this for making input make sure to use ENRTY()
+input = Entry()
+#here is for the disegn
+input.config(
+    fg='black',
+    font=('Lucida Console',10,),
+    bg='#F2F3F5')
+
+#this is the defult text
+#input.insert(0, 'type . . .')
+
+#input.config(state=DISABLED) #the input ACTIVE/DISABLED
+
+input.config(width=25)# manage the size
+
+#input.config(show='*') #for password
+
+
+input.pack()
+
 
 title.pack() # this with the name if the var of Label will display the text
 #title.place() #this if you want to change the place of the text #and the above will be in the center
