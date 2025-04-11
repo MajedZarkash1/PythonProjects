@@ -4,20 +4,77 @@ window = Tk() #this to hold the TK to use it later in the code
 
 window.geometry("500x700") #this for width and height of the window
 
-window.title("Transater") #this is the title
+window.title("ChangeColor") #this is the title appear on the top
 
 icon = PhotoImage(file='T.png') #this to import the image
 window.iconphoto(True,icon) #this to display the image as an icon
+#--------------------------------------------------------------------#
+colors = ["gray", "yellow", "white", "green", "red", "brown"]
+current_color = 0 #this will track the index of the current color
 
-window.config(background="white") #this to change the color of the background
+def change_color():
+    global current_color # to import the var here
 
+    window.config(background=colors[current_color])
+    current_color = (current_color +1) % len(colors) # LOOP back to first color
+
+#To change the text background's color
+def text_color():
+    global current_color
+
+    title2.config(background=colors[current_color])
+    current_color = (current_color +1) % len(colors)
+
+
+'''
 #this is the title you can enter a text by using Lable
-title = Label(window,
+welcome = Label(window,
                text="Welcome", #text
                font=('Lucida Console',20,), #font
                fg='black', #text's color
                padx=50, #gap X
                pady=10,) #gap Y
+
+welcome.config(background='white')
+welcome.pack() # this with the name if the var of Label will display the text
+#welcome.place() #this if you want to change the place of the text #and the above will be in the center
+'''
+
+title2 = Label(window,
+                    text="Click to Change the color", 
+                    font=('Lucida Console', 23,),
+                    padx=50,
+                    pady=10,)
+
+title2.config(background='white')
+title2.pack()
+
+
+window.config(background="white") #this to change the color of the background
+
+#button
+button = Button(window,
+                text="Main background",
+                font=('Lucida Console', 12),
+                bg="#AED6F1",
+                fg="black",
+                width=20,
+                height=5,
+                command=change_color) #listener 
+
+button.pack(pady=20)
+
+button2 = Button(window,
+                text="text's background",
+                font=('Lucida Console', 12),
+                bg="#AED6F1",
+                fg="black",
+                width=20,
+                height=5,
+                command=text_color)
+
+
+button2.pack(pady=20)
 
 #this for making input make sure to use ENRTY()
 input = Entry()
@@ -30,18 +87,14 @@ input.config(
 #this is the defult text
 #input.insert(0, 'type . . .')
 
-#input.config(state=DISABLED) #the input ACTIVE/DISABLED
 
+#input.config(state=DISABLED) #the input ACTIVE/DISABLED
 input.config(width=25)# manage the size
 
 #input.config(show='*') #for password
 
 
 input.pack()
-
-
-title.pack() # this with the name if the var of Label will display the text
-#title.place() #this if you want to change the place of the text #and the above will be in the center
 
 window.mainloop() #this will display the window , and listen to the events
 
