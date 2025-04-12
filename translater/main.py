@@ -25,6 +25,12 @@ def text_color():
     title2.config(background=colors[current_color])
     current_color = (current_color +1) % len(colors)
 
+def button_color():
+    global current_color
+
+    button3.config(background=colors[current_color])
+    current_color = (current_color +1) % len(colors)
+
 
 '''
 #this is the title you can enter a text by using Lable
@@ -60,8 +66,10 @@ button = Button(window,
                 fg="black",
                 width=20,
                 height=5,
+                activebackground='#C5C6D0',
                 command=change_color) #listener 
 
+button.config(background='gray')
 button.pack(pady=20)
 
 button2 = Button(window,
@@ -71,11 +79,28 @@ button2 = Button(window,
                 fg="black",
                 width=20,
                 height=5,
+                relief="solid",
+                activebackground='#C5C6D0',
                 command=text_color)
 
-
+button2.config(background='gray')
 button2.pack(pady=20)
 
+button3 = Button(window,
+                text="text's background",
+                font=('Lucida Console', 12),
+                bg="#AED6F1",
+                fg="black",
+                width=20,
+                height=5,
+                relief="solid", #border
+                bd=1, #border size
+                command=button_color)
+
+button3.config(background='gray')
+button3.pack(pady=20)
+
+'''
 #this for making input make sure to use ENRTY()
 input = Entry()
 #here is for the disegn
@@ -92,9 +117,7 @@ input.config(
 input.config(width=25)# manage the size
 
 #input.config(show='*') #for password
-
-
 input.pack()
-
+'''
 window.mainloop() #this will display the window , and listen to the events
 
