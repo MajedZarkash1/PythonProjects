@@ -66,6 +66,8 @@ button = Button(window,
                 fg="black",
                 width=20,
                 height=5,
+                relief='solid',
+                bd=1,
                 activebackground='#C5C6D0',
                 command=change_color) #listener 
 
@@ -81,13 +83,14 @@ button2 = Button(window,
                 height=5,
                 relief="solid",
                 activebackground='#C5C6D0',
+                bd=1,
                 command=text_color)
 
 button2.config(background='gray')
 button2.pack(pady=20)
 
 button3 = Button(window,
-                text="text's background",
+                text="button's background",
                 font=('Lucida Console', 12),
                 bg="#AED6F1",
                 fg="black",
