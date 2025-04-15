@@ -1,10 +1,26 @@
 from tkinter import *
 
+def change_bg_color():
+    current_color = main.cget("bg")
+    new_color = "gray" if current_color == "black" else "black"
+    main.config(background=new_color)
+
+
+
+
 main = Tk()
 
 main.geometry("500x500")
 main.title("UserEnterFace")
 main.config(background="black")
+
+bg_button = Button(main,
+                   text="Change Color",
+                   command=change_bg_color,
+                   font=('solid', 10),
+                   bg="gray",
+                   fg="white")
+bg_button.place(x=10,y=10)
 
 title = Label(main, 
               text="Welcome",
