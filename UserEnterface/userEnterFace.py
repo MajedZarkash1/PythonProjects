@@ -5,6 +5,17 @@ def change_bg_color():
     new_color = "gray" if current_color == "black" else "black"
     main.config(background=new_color)
 
+    current_color_label = username.cget("bg")
+    new_color_label = "gray" if current_color_label == "black" else "black"
+    username.config(background=new_color_label)
+    
+    current_color_label = title.cget("bg")
+    new_color_label = "gray" if current_color_label == "black" else "black"
+    title.config(background=new_color_label)
+    
+    current_color_label = password.cget("bg")
+    new_color_label = "gray" if current_color_label == "black" else "black"
+    password.config(background=new_color_label)
 
 
 
