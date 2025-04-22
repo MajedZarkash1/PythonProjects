@@ -1,27 +1,20 @@
-import kivy
-from kivy.app import App
-from kivy.uix.label import Label
+import kivy #import kivy
+
+from kivy.app import App #Main
+from kivy.uix.label import Label #import Label
+from kivy.uix.button import Button #import Button
 from kivy.uix.gridlayout import GridLayout
-from kivy.uix.textinput import TextInput
-from kivy.uix.button import Button
 
-class grid(GridLayout):
+class MyApp(GridLayout): #the code should start here
+
     def __init__(self, **kwargs):
-        super(grid, self).__init__(**kwargs)
+        super().__init__(**kwargs)
+        self.cols = 3
 
-        #set colums
-        self.cols = 2
+        self.add_widget(Label(text="Hello I am Label"))
+        self.add_widget(Button(text="Hello I am Button"))
+        
 
-        #add widgets
-        self.add_widget(Label(text="name: "))
-        #add input
-        self.name = TextInput(multiline=False)
-        self.add_widget(self.name)
-
-class Myapp(App):
-    def build(self):
-        return grid()
     
-
 if __name__ == '__main__':
-    Myapp().run()
+    MyApp().run() #the code should end here
