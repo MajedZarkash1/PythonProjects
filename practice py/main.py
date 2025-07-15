@@ -30,3 +30,28 @@ def function():
 function()
 
 var = function()
+
+def getting_inputs():
+    right = "-"
+    input1 = input()
+    if input1 == '1':
+        print("great"+right)
+    else:
+        print("not right"+right+right)
+
+
+getting_inputs()
+
+def whileS():
+    arrow = "->"
+    input2 = input()
+whileS()
+
+
+
+
+get = input()
+while get != '1':
+    print("welcome it is wrong")
+    if get == '2':
+        break
