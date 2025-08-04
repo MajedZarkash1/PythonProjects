@@ -1,11 +1,11 @@
-import tkinter as tk
 
+def my_function():
+	print("type 1")
+	answer = input()
 
+	if answer == '1':
+		print("good")
+	else:
+		print("faile")
 
-
-root = tk.Tk()
-root.title("Login System")
-root.geometry("300x200")
-
-
-root.mainloop()
+my_function()
